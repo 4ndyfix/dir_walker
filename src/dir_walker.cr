@@ -15,7 +15,7 @@ class Dir
   # Dir::Walker.walk(ENV["HOME"]) do |path|
   #   if File.directory? path
   #     if File.basename(path).starts_with?(".")
-  #       Dir::Walker.prune # Don't look any further into this directory.
+  #       Dir::Walker.prune_path # Don't look any further into this directory.
   #     end
   #   else
   #     total_size += File.size(path)
@@ -79,7 +79,7 @@ class Dir
     Dir::Walker.walk *dirs, sort_proc: sort_proc, ignore_error: ignore_error, &block
   end
 
-  # shortcut or alias for `Dir::Walker.prune`
+  # shortcut or alias for `Dir::Walker.prune_path`
   def self.prune_path
     Dir::Walker.prune_path
   end

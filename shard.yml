@@ -1,5 +1,8 @@
 name: dir_walker
-version: 0.9.0
+
+description: supports the top-down traversal of a set of directories
+
+version: v0.9.0
 
 authors:
   - 4ndyfix <4ndy@online.de>

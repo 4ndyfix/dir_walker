@@ -3,9 +3,7 @@
 # dir_walker
 
 The `Dir::Walker` module supports the top-down traversal of a set of directories.
-It is similar to the standard method `Dir.glob("**/*")`, but has additional features like
-skip specific subdirectories, change the sort-oder of directory-listings (default: by name)
-or optionally ignore errors (IO::Error).
+It is similar to the standard method `Dir.glob("**/*")`, but has additional features like skip specific subdirectories, change the sort-oder of directory-listing (default: by name) or optionally ignore errors (IO::Error).
 
 The sourcecode is a port of the Ruby standard lib `Find`.
 
@@ -42,7 +40,7 @@ total_size : Int64 = 0
 Dir::Walker.walk(ENV["HOME"]) do |path|
   if File.directory? path
     if File.basename(path).starts_with?(".")
-      Dir::Walker.prune # Don't look any further into this directory.
+      Dir::Walker.prune_path # Don't look any further into this directory.
     end
   else
     total_size += File.size(path)
@@ -51,10 +49,6 @@ end
   
 puts total_size.humanize
 ```
-
-## Development
-
-TODO: Write development instructions here
 
 ## Contributing
 
