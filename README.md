@@ -7,6 +7,8 @@ It is similar to the standard method `Dir.glob("**/*")`, but has additional feat
 
 [![GitHub release](https://img.shields.io/github/release/4ndyfix/dir_walker.svg)](https://github.com/4ndyfix/dir_walker/releases)
 
+[![Build Status](https://travis-ci.org/4ndyfix/dir_walker.svg?branch=main)](https://travis-ci.org/4ndyfix/dir_walker) 
+
 The sourcecode is a port of the Ruby standard lib `Find`.
 
 The feature generally is also available in many other languages. Examples are:
