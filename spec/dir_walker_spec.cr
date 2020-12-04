@@ -61,7 +61,7 @@ describe Dir::Walker do
         ["x_DIR", "z_DIR", "b_file"],
         ["x_DIR", "z_DIR", "a_file"],
         ["x_DIR", "z_DIR", "c_file"],
-      ])
+      ], reset_mtime: true)
       result = [] of String
       sort_proc = Proc(String, String, Int32).new { |a, b| File.info(a).modification_time <=> File.info(b).modification_time }
       Dir::Walker.walk(base, sort_proc: sort_proc) { |path| result << path }

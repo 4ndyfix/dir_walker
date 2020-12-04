@@ -12,7 +12,7 @@ def useTmpDir(&block : String ->)
   end
 end
 
-def create_paths(base : String, paths : Array(Array(String)))
+def create_paths(base : String, paths : Array(Array(String)), reset_mtime = false)
   expected = [base]
   paths.each do |items|
     joined = File.join([base, items].flatten)
@@ -24,8 +24,8 @@ def create_paths(base : String, paths : Array(Array(String)))
       File.touch joined
     end
     expected << joined
-    sleep 0.000_001 # 1us, because of distinct directory mtime values
   end
+  reset_mtime(expected) if reset_mtime
   expected
 end
 
@@ -38,6 +38,15 @@ def create_slink(joined : String)
     File.symlink source, destination
   end
   File.join location, destination
+end
+
+def reset_mtime(expected : Array(String))
+  time = Time.utc - 1.hours
+  expected.each do |path|
+    time += 1.seconds
+    File.touch path, time
+    # puts "#{File.info(path).modification_time}: #{path}"
+  end
 end
 
 def windows?
