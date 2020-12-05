@@ -2,7 +2,7 @@ name: dir_walker
 
 description: supports the top-down traversal of a set of directories
 
-version: v0.9.0
+version: v0.9.1
 
 authors:
   - 4ndyfix <4ndy@online.de>
