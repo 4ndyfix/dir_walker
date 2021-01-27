@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 6 * * 6'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download source
+        uses: actions/checkout@v2
+      - name: Install Crystal
+        uses: oprypin/install-crystal@v1
+      - name: Check code formatting
+        run: crystal tool format --check        
+      - name: Run tests
+        run: crystal spec
+        
+

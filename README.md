@@ -6,8 +6,7 @@ The `Dir::Walker` module supports the top-down traversal of a set of directories
 It is similar to the standard method `Dir.glob("**/*")`, but has additional features like skip specific subdirectories, change the sort-oder of directory-listing (default: by name) or optionally ignore errors (IO::Error).
 
 [![GitHub release](https://img.shields.io/github/release/4ndyfix/dir_walker.svg)](https://github.com/4ndyfix/dir_walker/releases)
-
-[![Build Status](https://travis-ci.org/4ndyfix/dir_walker.svg?branch=main)](https://travis-ci.org/4ndyfix/dir_walker) 
+[![Actions Status](https://github.com/4ndyfix/dir_walker/workflows/Linux%20CI/badge.svg)](https://github.com/4ndyfix/dir_walker/actions)
 
 The sourcecode is a port of the Ruby standard lib `Find`.
 
