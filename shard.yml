@@ -7,6 +7,6 @@ version: v0.9.1
 authors:
   - 4ndyfix <4ndy@online.de>
 
-crystal: 0.35.1
+crystal: 0.36.0
 
 license: MIT
